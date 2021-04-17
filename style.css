@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	height: 100vh;
+	margin: 0;
+	font-family: 'Nanum Gothic', sans-serif;
+	background-color: #e4bad4;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+h1{
+	padding-bottom: 4rem;
+	font-family: 'Dancing Script', cursive;
+	color: #7b113a;
+	font-size: 3rem;
+}
+
+.music-container{
+	background-color: #fff3e6;
+	border-radius: 17px;
+	box-shadow: 0 25px 50px 0 #763857;
+	display: flex;
+	padding: 20px 50px;
+	position: relative;
+	margin: 10px 0;
+	z-index: 10;
+}
+
+.img-container{
+	width: 110px;
+	position: relative;
+}
+
+.img-container::after{
+	content: '';
+	background-color: #fff;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	left: 50%;
+	bottom: 70%;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.img-container img{
+	width: inherit;
+	height: 110px;
+	border-radius: 50%;
+	object-fit: cover;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	animation: rotate 5s linear infinite;
+
+	animation-play-state: paused; 
+}
+
+
+.music-container.play .img-container img {
+	animation-play-state: running;
+}
+
+
+@keyframes rotate{
+	from{
+		transform: rotate(0deg);
+	}
+
+	to{
+		transform: rotate(360deg);	
+	}
+}
+
+.navigation{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+
+
+.action-btn{
+	background-color: #fff3e6;
+	border: 0;
+	color: #e36bae;
+	font-size: 1rem;
+	padding: 10px;
+	margin: 0 20px;
+}
+
+.action-btn-big{
+	color: #822659;
+	font-size: 1.3rem;
+}
+
+.action-btn:focus{
+	outline: 0;
+}
+
+.music-info{
+	background-color: #ffe3fe;
+	border-radius: 15px 15px 0 0;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	width: calc(100% - 40px);
+	opacity: 0;
+	transform: translateY(0%);
+	padding: 10px 10px 10px 150px;
+	transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.music-info h4{
+	color: #b5076b;
+	margin-left: -1rem;
+	margin: 0;
+}
+
+.music-container.play .music-info{
+	opacity: 1;
+	transform: translateY(-100%);
+}
+
+
+.progress-container{
+	background: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 10px 0;
+	height: 4px;
+	width: 110px;
+}
+
+.progress{
+	background-color: #b34180;
+	border-radius: 5px;
+	height: 100%;
+	width: 0%;
+	transition: width 0.1s linear;
+}
+
+
