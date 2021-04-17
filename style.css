@@ -151,3 +151,25 @@ h1{
 }
 
 
+
+@media screen and (min-width: 330px){
+	.music-container{
+		box-shadow: 0 25px 50px 0 #763857;
+		display: flex;
+		padding: 15px 0;
+		position: relative;
+		margin: 10px 0;
+		z-index: 10;
+	}
+
+	.progress-container{
+		margin-left: -3rem;
+	}
+
+	.music-info h4{
+		color: #b5076b;
+		margin-left: -4rem;
+		font-size: .9rem;
+	}
+	
+  }
